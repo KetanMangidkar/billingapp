@@ -1,0 +1,22 @@
+.boxer {
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.topbox {
+  border: 1px solid black;
+  padding: 2rem;
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .innerbox {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.rightbox {
+  width: 960px;
+}

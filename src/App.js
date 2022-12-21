@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./Components/Navbar";
+import { Signup } from "./Components/Signup";
+import { Login } from "./Components/Login";
+import Home from "./Components/Home";
+import Dashboard from "./Components/AdminDashboard";
+import UserDashboard from "./Components/UserDashboard";
+import Billingpage from "./Components/Billingpage";
+import "./App.css";
 
 function App() {
+  let userData = JSON.parse(localStorage.getItem("login")) || [];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/admindashboard" element={<Dashboard />}></Route>
+        <Route path="/dashboard" element={<UserDashboard />}></Route>
+        <Route path="/billing" element={<Billingpage />}></Route>
+      </Routes>
     </div>
   );
 }
